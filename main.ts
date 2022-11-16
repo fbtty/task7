@@ -1,12 +1,5 @@
 input.onButtonPressed(Button.A, function () {
-    basic.showNumber(led.brightness())
-    basic.showLeds(`
-        # # # # #
-        # # # # #
-        # # # # #
-        # # # # #
-        # # # # #
-        `)
+	
 })
 input.onButtonPressed(Button.B, function () {
     X += 1
@@ -22,5 +15,15 @@ basic.forever(function () {
     }
     if (X % 2 == 1) {
         led.setBrightness(255 - input.lightLevel())
+    }
+    if (input.buttonIsPressed(Button.A)) {
+        basic.showNumber(led.brightness())
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
     }
 })
